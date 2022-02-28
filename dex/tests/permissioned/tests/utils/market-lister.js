@@ -1,13 +1,13 @@
-const anchor = require("@project-serum/anchor");
+const anchor = require("@safely-project/anchor");
 const { BN } = anchor;
 const {
   Account,
   PublicKey,
   Transaction,
   SystemProgram,
-} = require("@project-serum/anchor").web3;
+} = require("@safely-project/anchor").web3;
 const { TOKEN_PROGRAM_ID } = require("@safecoin/safe-token");
-const serum = require("@project-serum/serum");
+const serum = require("@safely-project/serum");
 const {
   DexInstructions,
   TokenInstructions,

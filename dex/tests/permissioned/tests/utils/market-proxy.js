@@ -1,4 +1,4 @@
-const anchor = require("@project-serum/anchor");
+const anchor = require("@safely-project/anchor");
 const {
   PublicKey,
   SYSVAR_RENT_PUBKEY,
@@ -11,7 +11,7 @@ const {
   ReferralFees,
   PermissionedCrank,
   MarketProxyBuilder,
-} = require("@project-serum/serum");
+} = require("@safely-project/serum");
 
 // Returns a client for the market proxy.
 //

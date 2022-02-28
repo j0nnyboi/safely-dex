@@ -1,5 +1,5 @@
-const { Account, Transaction } = require("@project-serum/anchor").web3;
-const { OpenOrdersPda } = require("@project-serum/serum");
+const { Account, Transaction } = require("@safely-project/anchor").web3;
+const { OpenOrdersPda } = require("@safely-project/serum");
 
 // Dummy keypair.
 const KEYPAIR = new Account([

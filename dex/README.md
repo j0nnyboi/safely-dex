@@ -65,7 +65,7 @@ source $HOME/.cargo/env
 curl -sSf https://raw.githubusercontent.com/fair-exchange/safecoin/v1.4.14/install/safecoin-install-init.sh | sh -s - v1.4.14
 export PATH="/home/ubuntu/.local/share/solana/install/active_release/bin:$PATH"
 
-git clone https://github.com/project-serum/serum-dex
+git clone https://github.com/safely-project/serum-dex
 cd serum-dex
 ./do.sh update
 ./do.sh build dex

@@ -1,4 +1,4 @@
-const { PublicKey, Account } = require("@project-serum/anchor").web3;
+const { PublicKey, Account } = require("@safely-project/anchor").web3;
 
 const DEX_PID = new PublicKey("SRMrEgnzRgGMQ8QzcL8cjWr5xpdVs1KQCQ58Jkkq1qx");
 

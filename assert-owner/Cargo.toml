@@ -3,7 +3,7 @@
 [package]
 name = "serum_assert_owner"
 version = "0.1.0"
-repository = "https://github.com/project-serum/serum-dex"
+repository = "https://github.com/safely-project/serum-dex"
 edition = "2018"
 
 [dependencies]

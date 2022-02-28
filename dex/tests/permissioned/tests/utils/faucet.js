@@ -1,7 +1,7 @@
-const anchor = require("@project-serum/anchor");
+const anchor = require("@safely-project/anchor");
 const BN = anchor.BN;
 const { Account, Transaction, SystemProgram } = anchor.web3;
-const serumCmn = require("@project-serum/common");
+const serumCmn = require("@safely-project/common");
 const { TOKEN_PROGRAM_ID, Token } = require("@safecoin/safe-token");
 
 const DECIMALS = 6;

@@ -1,5 +1,5 @@
-const { BN } = require("@project-serum/anchor");
-const { PublicKey } = require("@project-serum/anchor").web3;
+const { BN } = require("@safely-project/anchor");
+const { PublicKey } = require("@safely-project/anchor").web3;
 const marketProxy = require("./market-proxy");
 const marketLister = require("./market-lister");
 const faucet = require("./faucet");
