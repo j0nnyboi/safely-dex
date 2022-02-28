@@ -1,5 +1,5 @@
 use num_enum::{IntoPrimitive, TryFromPrimitive};
-use solana_program::pubkey::Pubkey;
+use safecoin_program::pubkey::Pubkey;
 use std::convert::TryInto;
 
 #[cfg(test)]
@@ -7,19 +7,19 @@ use proptest_derive::Arbitrary;
 
 mod stable_markets {
     pub mod usdt_usdc {
-        solana_program::declare_id!("77quYg4MGneUdjgXCunt9GgM1usmrxKY31twEy3WHwcS");
+        safecoin_program::declare_id!("77quYg4MGneUdjgXCunt9GgM1usmrxKY31twEy3WHwcS");
     }
     pub mod msol_sol {
-        solana_program::declare_id!("5cLrMai1DsLRYc1Nio9qMTicsWtvzjzZfJPXyAoF4t1Z");
+        safecoin_program::declare_id!("5cLrMai1DsLRYc1Nio9qMTicsWtvzjzZfJPXyAoF4t1Z");
     }
     pub mod ust_usdc {
-        solana_program::declare_id!("EERNEEnBqdGzBS8dd46wwNY5F2kwnaCQ3vsq2fNKGogZ");
+        safecoin_program::declare_id!("EERNEEnBqdGzBS8dd46wwNY5F2kwnaCQ3vsq2fNKGogZ");
     }
     pub mod ust_usdt {
-        solana_program::declare_id!("8sFf9TW3KzxLiBXcDcjAxqabEsRroo4EiRr3UG1xbJ9m");
+        safecoin_program::declare_id!("8sFf9TW3KzxLiBXcDcjAxqabEsRroo4EiRr3UG1xbJ9m");
     }
     pub mod stsol_sol {
-        solana_program::declare_id!("2iDSTGhjJEiRxNaLF27CY6daMYPs5hgYrP2REHd5YD62");
+        safecoin_program::declare_id!("2iDSTGhjJEiRxNaLF27CY6daMYPs5hgYrP2REHd5YD62");
     }
 }
 

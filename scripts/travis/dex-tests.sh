@@ -3,8 +3,8 @@
 set -euxo pipefail
 
 CLUSTER=localnet
-KEYPAIR_FILE=$HOME/.config/solana/id.json
-CLUSTER_URL=http://localhost:8899
+KEYPAIR_FILE=$HOME/.config/safecoin/id.json
+CLUSTER_URL=http://localhost:8328
 PROGRAM_ID="2SXFv8tTmavm8uSAg3ft1JjttzJvgwXZiUPa9xuUbqH2"
 
 #
@@ -19,7 +19,7 @@ main() {
     #
     # Start the local validator.
     #
-    solana-test-validator --bpf-program $PROGRAM_ID dex/target/deploy/serum_dex.so > validator.log &
+    safecoin-test-validator --bpf-program $PROGRAM_ID dex/target/deploy/serum_dex.so > validator.log &
     #
     # Wait for the validator to start.
     #
@@ -33,11 +33,11 @@ main() {
     #
     # Create a keypair for the tests.
     #
-    yes | solana-keygen new --outfile $KEYPAIR_FILE
+    yes | safecoin-keygen new --outfile $KEYPAIR_FILE
     #
     # Fund the keypair.
     #
-    yes | solana airdrop --url $CLUSTER_URL 100
+    yes | safecoin airdrop --url $CLUSTER_URL 100
     set -e
     #
     # Run the unit tests.

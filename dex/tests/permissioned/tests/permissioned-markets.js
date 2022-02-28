@@ -1,5 +1,5 @@
 const assert = require("assert");
-const { Token, TOKEN_PROGRAM_ID } = require("@solana/spl-token");
+const { Token, TOKEN_PROGRAM_ID } = require("@safecoin/safe-token");
 const anchor = require("@project-serum/anchor");
 const serum = require("@project-serum/serum");
 const { BN } = anchor;
@@ -21,7 +21,7 @@ const {
 } = serum;
 const { genesis, sleep } = require("./utils");
 
-const DEX_PID = new PublicKey("9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin");
+const DEX_PID = new PublicKey("SRMrEgnzRgGMQ8QzcL8cjWr5xpdVs1KQCQ58Jkkq1qx");
 const REFERRAL_AUTHORITY = new PublicKey(
   "3oSfkjQZKCneYvsCTZc9HViGAPqR8pYr4h9YeGB5ZxHf"
 );

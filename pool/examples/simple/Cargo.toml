@@ -10,7 +10,7 @@ program = []
 default = []
 
 [dependencies]
-solana-program = "1.4.14"
+safecoin-program = "1.4.14"
 serum-pool = { version = "0.1.0", path = "../.." }
 
 [lib]

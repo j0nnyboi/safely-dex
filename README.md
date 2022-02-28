@@ -1,80 +1,145 @@
-<div align="center">
-  <img height="170" src="http://github.com/project-serum/awesome-serum/blob/master/logo-serum.png?raw=true" />
+<p align="center">
+  <a href="https://solana.com">
+    <img alt="Safecoin" src="https://raw.githubusercontent.com/Fair-Exchange/safecoinwiki/master/Logos/SafeCoin/SafeCoin-Logo-with-text.png"/>
+  </a>
+</p>
 
-  <h1>serum-dex</h1>
+[![twitter](https://img.shields.io/twitter/follow/safecoins?style=social)](https://twitter.com/safecoins)
 
-  <p>
-    <strong>Project Serum Rust Monorepo</strong>
-  </p>
 
-  <p>
-    <a href="https://travis-ci.com/project-serum/serum-dex"><img alt="Build Status" src="https://travis-ci.com/project-serum/serum-dex.svg?branch=master" /></a>
-    <a href="https://discord.com/channels/739225212658122886"><img alt="Discord Chat" src="https://img.shields.io/discord/739225212658122886?color=blueviolet" /></a>
-    <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/github/license/project-serum/serum-dex?color=blue" /></a>
-  </p>
+# Building
 
-  <h4>
-    <a href="https://projectserum.com/">Website</a>
-    <span> | </span>
-    <a href="https://discord.gg/HSeFXbqsUX">Discord</a>
-    <span> | </span>
-    <a href="https://github.com/project-serum/awesome-serum">Awesome</a>
-    <span> | </span>
-    <a href="https://dex.projectserum.com/#/">DEX</a>
-    <span> | </span>
-    <a href="https://github.com/project-serum/serum-ts">TypeScript</a>
-  </h4>
-</div>
-
-## Program Deployments
-
-| Program | Devnet | Mainnet Beta |
-| --------|--------|------------- |
-| [DEX](/dex)     | `DESVgJVGajEgKGXhb6XmqDHGz3VjdgP7rEVESBgxmroY` | `9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin` |
-
-## Note
-
-* **Serum is in active development so all APIs and protocols are subject to change.**
-* **The code is unaudited. Use at your own risk.**
-
-## Contributing
-
-### Install Rust
+## **1. Install rustc, cargo and rustfmt.**
 
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-rustup component add rustfmt
+$ curl https://sh.rustup.rs -sSf | sh
+$ source $HOME/.cargo/env
+$ rustup component add rustfmt
 ```
 
-On Linux systems you may need to install additional dependencies. On Ubuntu,
+Please make sure you are always using the latest stable rust version by running:
 
 ```bash
-sudo apt-get install -y pkg-config build-essential python3-pip jq
+$ rustup update
 ```
 
-### Install Solana
-
-Directions can be found [here](https://docs.solana.com/cli/install-solana-cli-tools#use-solanas-install-tool).
-
-### Download the source
+On Linux systems you may need to install libssl-dev, pkg-config, zlib1g-dev, etc.  On Ubuntu:
 
 ```bash
-git clone https://github.com/project-serum/serum-dex.git
+$ sudo apt-get update
+$ sudo apt-get install libssl-dev libudev-dev pkg-config zlib1g-dev llvm clang make
 ```
 
-### Build, deploy, and test programs
+## **2. Download the source code.**
 
-See individual crates for documentation. For example, to build the dex see its [README](https://github.com/project-serum/serum-dex/tree/master/dex).
+```bash
+$ git clone https://github.com/Fair-Exchange/Safecoin.git
+$ cd Safecoin
+```
 
-## Running a local Solana cluster
+## **3. Build.**
 
-The easiest way to run a local cluster is to use [solana-test-validator](https://docs.solana.com/developing/test-validator).
+```bash
+$ cargo build
+```
 
-## Directories
+## **4. Run a minimal local cluster.**
+```bash
+$ ./run.sh
+```
 
-* `assert-owner`: Solana utility program for checking account ownership.
-* `common`: Common rust utilities.
-* `dex`: Serum DEX program and client utility.
-* `pool`: Serum pool protocol.
-* `scripts`: Bash scripts for development.
+# Testing
+
+**Run the test suite:**
+
+```bash
+$ cargo test
+```
+
+### Starting a local testnet
+Start your own testnet locally, instructions are in the [online docs](https://docs.solana.com/cluster/bench-tps).
+
+### Accessing the remote development cluster
+* `devnet` - stable public cluster for development accessible via
+devnet.safecoin.org. Runs 24/7. Learn more about the [public clusters](https://docs.solana.com/clusters)
+
+# Benchmarking
+
+First install the nightly build of rustc. `cargo bench` requires use of the
+unstable features only available in the nightly build.
+
+```bash
+$ rustup install nightly
+```
+
+Run the benchmarks:
+
+```bash
+$ cargo +nightly bench
+```
+
+# Release Process
+
+The release process for this project is described [here](RELEASE.md).
+
+# Code coverage
+
+To generate code coverage statistics:
+
+```bash
+$ scripts/coverage.sh
+$ open target/cov/lcov-local/index.html
+```
+
+Why coverage? While most see coverage as a code quality metric, we see it primarily as a developer
+productivity metric. When a developer makes a change to the codebase, presumably it's a *solution* to
+some problem.  Our unit-test suite is how we encode the set of *problems* the codebase solves. Running
+the test suite should indicate that your change didn't *infringe* on anyone else's solutions. Adding a
+test *protects* your solution from future changes. Say you don't understand why a line of code exists,
+try deleting it and running the unit-tests. The nearest test failure should tell you what problem
+was solved by that code. If no test fails, go ahead and submit a Pull Request that asks, "what
+problem is solved by this code?" On the other hand, if a test does fail and you can think of a
+better way to solve the same problem, a Pull Request with your solution would most certainly be
+welcome! Likewise, if rewriting a test can better communicate what code it's protecting, please
+send us that patch!
+
+# Disclaimer
+
+All claims, content, designs, algorithms, estimates, roadmaps,
+specifications, and performance measurements described in this project
+are done with the Solana Foundation's ("SF") best efforts. It is up to
+the reader to check and validate their accuracy and truthfulness.
+Furthermore nothing in this project constitutes a solicitation for
+investment.
+
+Any content produced by SF or developer resources that SF provides, are
+for educational and inspiration purposes only. SF does not encourage,
+induce or sanction the deployment, integration or use of any such
+applications (including the code comprising the Safecoin blockchain
+protocol) in violation of applicable laws or regulations and hereby
+prohibits any such deployment, integration or use. This includes use of
+any such applications by the reader (a) in violation of export control
+or sanctions laws of the United States or any other applicable
+jurisdiction, (b) if the reader is located in or ordinarily resident in
+a country or territory subject to comprehensive sanctions administered
+by the U.S. Office of Foreign Assets Control (OFAC), or (c) if the
+reader is or is working on behalf of a Specially Designated National
+(SDN) or a person subject to similar blocking or denied party
+prohibitions.
+
+The reader should be aware that U.S. export control and sanctions laws
+prohibit U.S. persons (and other persons that are subject to such laws)
+from transacting with persons in certain countries and territories or
+that are on the SDN list. As a project based primarily on open-source
+software, it is possible that such sanctioned persons may nevertheless
+bypass prohibitions, obtain the code comprising the Safecoin blockchain
+protocol (or other project code or applications) and deploy, integrate,
+or otherwise use it. Accordingly, there is a risk to individuals that
+other persons using the Safecoin blockchain protocol may be sanctioned
+persons and that transactions with such persons would be a violation of
+U.S. export controls and sanctions law. This risk applies to
+individuals, organizations, and other ecosystem participants that
+deploy, integrate, or use the Safecoin blockchain protocol code directly
+(e.g., as a node operator), and individuals that transact on the Safecoin
+blockchain through light clients, third party interfaces, and/or wallet
+software.

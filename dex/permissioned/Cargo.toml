@@ -7,4 +7,4 @@ edition = "2018"
 anchor-lang = "0.18.2"
 anchor-spl = { version = "0.18.2", features = ["dex"] }
 serum_dex = { path = "../", features = ["no-entrypoint"] }
-spl-token = { version = "3.1.1", features = ["no-entrypoint"] }
+safe-token = { version = "3.2.2", features = ["no-entrypoint"] }

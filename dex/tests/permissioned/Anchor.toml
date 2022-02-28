@@ -1,12 +1,12 @@
 [provider]
 cluster = "localnet"
-wallet = "~/.config/solana/id.json"
+wallet = "~/.config/safecoin/id.json"
 
 [programs.localnet]
 permissioned_markets = "Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS"
 
 [[test.genesis]]
-address = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+address = "SRMrEgnzRgGMQ8QzcL8cjWr5xpdVs1KQCQ58Jkkq1qx"
 program = "../../target/deploy/serum_dex.so"
 
 [scripts]

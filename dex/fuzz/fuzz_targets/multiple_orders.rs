@@ -12,7 +12,7 @@ use bumpalo::Bump;
 use itertools::Itertools;
 use lazy_static::lazy_static;
 use libfuzzer_sys::fuzz_target;
-use solana_program::account_info::AccountInfo;
+use safecoin_program::account_info::AccountInfo;
 
 use serum_dex::error::{DexError, DexErrorCode};
 use serum_dex::instruction::{
@@ -22,7 +22,7 @@ use serum_dex::matching::Side;
 use serum_dex::state::{strip_header, Market, OpenOrders, ToAlignedBytes};
 use serum_dex_fuzz::{
     get_token_account_balance, new_dex_owned_account_with_lamports, new_sol_account,
-    new_token_account, process_instruction, setup_market, MarketAccounts, NoSolLoggingStubs,
+    new_token_account, process_instruction, setup_market, MarketAccounts, NoSafeLoggingStubs,
     COIN_LOT_SIZE, PC_LOT_SIZE,
 };
 
@@ -173,7 +173,7 @@ fn run_actions(seq: ActionSequence) {
     if *VERBOSE >= 1 {
         println!("{:#?}", seq);
     } else {
-        solana_program::program_stubs::set_syscall_stubs(Box::new(NoSolLoggingStubs));
+        safecoin_program::program_stubs::set_syscall_stubs(Box::new(NoSafeLoggingStubs));
     }
 
     let ActionSequence {
@@ -397,7 +397,7 @@ fn run_action<'bump>(
                     owner.signer_account.clone(),
                     market_accounts.coin_vault.clone(),
                     market_accounts.pc_vault.clone(),
-                    market_accounts.spl_token_program.clone(),
+                    market_accounts.safe_token_program.clone(),
                     market_accounts.rent_sysvar.clone(),
                 ],
                 &MarketInstruction::NewOrderV3(instruction.clone()).pack(),
@@ -574,7 +574,7 @@ fn run_action<'bump>(
                 owner.coin_account.clone(),
                 owner.pc_account.clone(),
                 market_accounts.vault_signer.clone(),
-                market_accounts.spl_token_program.clone(),
+                market_accounts.safe_token_program.clone(),
             ];
             if let Some(referrer_id) = referrer_id {
                 let referrer = referrers
@@ -606,7 +606,7 @@ fn run_action<'bump>(
                     market_accounts.sweep_authority.clone(),
                     market_accounts.fee_receiver.clone(),
                     market_accounts.vault_signer.clone(),
-                    market_accounts.spl_token_program.clone(),
+                    market_accounts.safe_token_program.clone(),
                 ],
                 &MarketInstruction::SweepFees.pack(),
             )
@@ -648,7 +648,7 @@ fn run_action<'bump>(
                 &[
                     owner.orders_account.clone(),
                     owner.signer_account.clone(),
-                    owner.signer_account.clone(), // SOL destination.
+                    owner.signer_account.clone(), // SAFE destination.
                     market_accounts.market.clone(),
                 ],
                 &MarketInstruction::CloseOpenOrders.pack(),

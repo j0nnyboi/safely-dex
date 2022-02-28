@@ -17,7 +17,7 @@ limitations under the License.
 #![allow(unused)]
 //! Instruction types
 
-use solana_sdk::{
+use safecoin_sdk::{
     instruction::{AccountMeta, Instruction},
     program_error::ProgramError,
     pubkey::Pubkey,
@@ -60,7 +60,7 @@ pub enum TokenInstruction {
         decimals: u8,
     },
     /// Initializes a new account to hold tokens.  If this account is associated with the native mint
-    /// then the token balance of the initialized account will be equal to the amount of SOL in the account.
+    /// then the token balance of the initialized account will be equal to the amount of SAFE in the account.
     ///
     /// The `InitializeAccount` instruction requires no signers and MUST be included within
     /// the same Transaction as the system program's `CreateInstruction` that creates the account
@@ -91,7 +91,7 @@ pub enum TokenInstruction {
         m: u8,
     },
     /// Transfers tokens from one account to another either directly or via a delegate.  If this
-    /// account is associated with the native mint then equal amounts of SOL and Tokens will be
+    /// account is associated with the native mint then equal amounts of SAFE and Tokens will be
     /// transferred to the destination account.
     ///
     /// Accounts expected by this instruction:
@@ -192,7 +192,7 @@ pub enum TokenInstruction {
         /// The amount of tokens to burn.
         amount: u64,
     },
-    /// Close an account by transferring all its SOL to the destination account.
+    /// Close an account by transferring all its SAFE to the destination account.
     /// Non-native accounts may only be closed if its token amount is zero.
     ///
     /// Accounts expected by this instruction:

@@ -7,10 +7,10 @@ use serum_dex_permissioned::serum_dex::instruction::{
 use serum_dex_permissioned::{
     Context, Logger, MarketMiddleware, MarketProxy, OpenOrdersPda, ReferralFees,
 };
-use solana_program::account_info::AccountInfo;
-use solana_program::entrypoint::ProgramResult;
-use solana_program::pubkey::Pubkey;
-use solana_program::sysvar::rent;
+use safecoin_program::account_info::AccountInfo;
+use safecoin_program::entrypoint::ProgramResult;
+use safecoin_program::pubkey::Pubkey;
+use safecoin_program::sysvar::rent;
 
 declare_id!("Fg6PaFpoGXkYsidMpWTK6W2BeZ7FEfcYkg476zPFsLnS");
 
@@ -278,5 +278,5 @@ pub enum ErrorCode {
 
 pub mod referral {
     // This is a dummy address for testing. Do not use in production.
-    solana_program::declare_id!("3oSfkjQZKCneYvsCTZc9HViGAPqR8pYr4h9YeGB5ZxHf");
+    safecoin_program::declare_id!("3oSfkjQZKCneYvsCTZc9HViGAPqR8pYr4h9YeGB5ZxHf");
 }

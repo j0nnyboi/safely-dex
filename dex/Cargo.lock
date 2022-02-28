@@ -1001,8 +1001,8 @@ dependencies = [
  "rand 0.7.3",
  "safe-transmute",
  "serde",
- "solana-program",
- "spl-token",
+ "safecoin-program",
+ "safe-token",
  "static_assertions",
  "thiserror",
  "without-alloc",
@@ -1034,7 +1034,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-frozen-abi"
+name = "safecoin-frozen-abi"
 version = "1.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "45c6760c1dd139c202ef6df28bff467c904aa35b1aa1a59be268c47aec8bc6c0"
@@ -1048,13 +1048,13 @@ dependencies = [
  "serde",
  "serde_derive",
  "sha2",
- "solana-frozen-abi-macro",
- "solana-logger",
+ "safecoin-frozen-abi-macro",
+ "safecoin-logger",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-frozen-abi-macro"
+name = "safecoin-frozen-abi-macro"
 version = "1.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a4dbe296c16dec41e8e6f4e6c2694c6224820d34c0ab11a2d3ff9683f44878ef"
@@ -1066,7 +1066,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-logger"
+name = "safecoin-logger"
 version = "1.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "80af1959b520c0fc99bc6583ba9d82bfa15b1ac007516795bceeb4a951af77c7"
@@ -1077,7 +1077,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "solana-program"
+name = "safecoin-program"
 version = "1.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fe5e5dd99d642b5e89eeb20457310c3c23f20dbf44e67c64e473a02fbc50d646"
@@ -1104,15 +1104,15 @@ dependencies = [
  "serde_derive",
  "sha2",
  "sha3",
- "solana-frozen-abi",
- "solana-frozen-abi-macro",
- "solana-logger",
- "solana-sdk-macro",
+ "safecoin-frozen-abi",
+ "safecoin-frozen-abi-macro",
+ "safecoin-logger",
+ "safecoin-sdk-macro",
  "thiserror",
 ]
 
 [[package]]
-name = "solana-sdk-macro"
+name = "safecoin-sdk-macro"
 version = "1.7.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "fee909dcddb5b4d349b3e5e1ae92f6660cd2f783dea392ae2e73210776aadc9b"
@@ -1125,7 +1125,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "spl-token"
+name = "safe-token"
 version = "3.0.0-pre1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf25e44e0ba3feab7ede53fe6c16193910813d03b19c6e332e9c7e956b179059"
@@ -1134,7 +1134,7 @@ dependencies = [
  "num-derive",
  "num-traits",
  "num_enum",
- "solana-program",
+ "safecoin-program",
  "thiserror",
 ]
 

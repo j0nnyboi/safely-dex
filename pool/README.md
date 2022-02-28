@@ -1,8 +1,8 @@
 # The Pool Protocol
 
-This is a protocol, on Solana, that defines pool-like functionality. Like Ethereum interfaces, the setup doesn't do much
+This is a protocol, on Safecoin, that defines pool-like functionality. Like Ethereum interfaces, the setup doesn't do much
 to constrain the actual behavior of programs which claim to implement this program. This crate defines
-an instruction format for pool operations, and provides a library that maps Solana's primitives onto the
+an instruction format for pool operations, and provides a library that maps Safecoin's primitives onto the
 Pool protocol's semantics.
 
 ## Data Layout

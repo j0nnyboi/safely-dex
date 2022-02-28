@@ -7,7 +7,7 @@ members = [
 
 [provider]
 cluster = "localnet"
-wallet = "~/.config/solana/id.json"
+wallet = "~/.config/safecoin/id.json"
 
 [programs.mainnet]
-serum_dex = "9xQeWvG816bUx9EPjHmaT23yvVM2ZWbrrpZb9PusVFin"
+serum_dex = "SRMrEgnzRgGMQ8QzcL8cjWr5xpdVs1KQCQ58Jkkq1qx"

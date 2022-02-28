@@ -6,7 +6,7 @@ cache: cargo
 env:
   global:
     - NODE_VERSION="v14.7.0"
-    - SOLANA_VERSION="v1.9.1"
+    - SAFECOIN_VERSION="v1.9.1"
 
 _defaults: &defaults
   language: rust
@@ -16,9 +16,9 @@ _defaults: &defaults
     - rustup component add rustfmt clippy
     - nvm install $NODE_VERSION
     - sudo apt-get install -y pkg-config build-essential libudev-dev jq
-    - sh -c "$(curl -sSfL https://release.solana.com/${SOLANA_VERSION}/install)"
+    - sh -c "$(curl -sSfL https://release.solana.com/${SAFECOIN_VERSION}/install)"
     - export PATH="/home/travis/.local/share/solana/install/active_release/bin:$PATH"
-    - yes | solana-keygen new
+    - yes | safecoin-keygen new
 
 jobs:
   include:

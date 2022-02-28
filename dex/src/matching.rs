@@ -6,8 +6,8 @@ use num_enum::{IntoPrimitive, TryFromPrimitive};
 use proptest_derive::Arbitrary;
 use serde::{Deserialize, Serialize};
 #[cfg(feature = "program")]
-use solana_program::msg;
-use solana_program::pubkey::Pubkey;
+use safecoin_program::msg;
+use safecoin_program::pubkey::Pubkey;
 
 use crate::critbit::SlabTreeError;
 use crate::error::{DexErrorCode, DexResult, SourceFileId};
