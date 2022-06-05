@@ -14,10 +14,10 @@ default = []
 
 
 [dependencies]
-safe-token = { version = "3.2.2", default-features = true }
+safe-token = { path = "../../safecoin-program-library/token/program", default-features = true }
 arrayref = "0.3.6"
 serde = { version = "1.0", features = ["derive"] }
-safecoin-sdk = { version = "1.8.12", default-features = false }
+safecoin-sdk = { path = "../../Safecoin/sdk", default-features = false }
 serum-borsh = "0.8.1-serum.1"
 
 # Program only.

@@ -16,8 +16,8 @@ default = ["program"]
 no-entrypoint = []
 
 [dependencies]
-safecoin-program = "1.8.12"
-safe-token = { version = "3.2.2", features = ["no-entrypoint"] }
+safecoin-program = {path = "../../Safecoin/sdk/program"}
+safe-token = { path = "../../safecoin-program-library/token/program", features = ["no-entrypoint"] }
 serde = "1.0.114"
 itertools = "0.9.0"
 without-alloc = "0.2.1"

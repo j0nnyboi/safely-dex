@@ -11,8 +11,8 @@ default = []
 [dependencies]
 serum-pool-schema = { version = "0.1.0", path = "./schema" }
 arrayref = "0.3.6"
-safecoin-program = "1.8.12"
-safe-token = { version = "3.2.2", features = ["no-entrypoint"] }
+safecoin-program = {path = "../../Safecoin/sdk/program"}
+safe-token = { path = "../../safecoin-program-library/token/program", features = ["no-entrypoint"] }
 thiserror = "1.0.20"
 zerocopy = "0.3.0"
 bytemuck = "1.4.1"
